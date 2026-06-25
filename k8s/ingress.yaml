@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: enterprise-system-20260625-200214-k0wkko58c6cv-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: enterprise-system-20260625-200214-k0wkko58c6cv.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: enterprise-system-20260625-200214-k0wkko58c6cv-service
+            port:
+              number: 80
